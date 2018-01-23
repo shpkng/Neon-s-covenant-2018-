@@ -22,8 +22,7 @@ public class Enemy : MonoBehaviour
 	float m_moveSpeed = 0.5f;
 	//角色旋转速度
 	float m_rotSpeed = 120;
-	//追踪该角色的雷达
-	public GameObject m_radar;
+
 
 	//定义计时器 
 	float m_timer = 2;
@@ -52,11 +51,6 @@ public class Enemy : MonoBehaviour
 
 		//初始化主角
 		m_player = GameObject.FindGameObjectWithTag("Player").GetComponent<ThirdPersonUserControl>();
-
-		//初始化追踪雷达
-		m_radar = Instantiate(m_radar);
-
-		m_radar.GetComponent<EnemyRadar>().AimedEnemy = this.transform;
 
 
 	}
@@ -88,7 +82,6 @@ public class Enemy : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.R))
 		{
 			isChasing = false;
-			m_radar.GetComponent<EnemyRadar>().AimedEnemy = null;
 		}
 
 	}
@@ -116,7 +109,7 @@ public class Enemy : MonoBehaviour
 
 	private void Attack()
 	{
-		m_agent.isStopped = true;
+
 	}
 
 	private void Die()

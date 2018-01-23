@@ -12,19 +12,17 @@ public class EnemyRadar : MonoBehaviour
 	void Start()
 	{
 		player = GameObject.Find("ThirdPersonController").GetComponent<Transform>();
-		//AimedEnemy = GameObject.Find("ImOnlyASphere").GetComponent<Transform>();
+		AimedEnemy = GameObject.Find("ImOnlyASphere").GetComponent<Transform>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-
-		//如果目标敌人存活
+	//如果目标敌人存活
 		if (AimedEnemy)
 		{
-		//这里是用来处理雷达刷新的代码
-			Vector3 offset = AimedEnemy.position - player.position;
-			this.transform.localPosition = (player.transform.position +  offset.normalized);
+			Vector3 offSet = AimedEnemy.position - player.position;
+			this.transform.localPosition = (player.transform.position + 0.3f * offSet);
 			//this.transform.Rotate(offSet.normalized);
 		}
 		else

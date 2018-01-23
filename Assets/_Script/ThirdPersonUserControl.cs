@@ -118,11 +118,11 @@ public class ThirdPersonUserControl : MonoBehaviour
 	/// 真的
 	private void AttackNear()
 	{
-		Debug.Log("Attack Near");
+
 	}
 
 	private void AttackDistant()
 	{
-		Debug.Log("Attack Distant");
+
 	}
 }
